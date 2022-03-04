@@ -1,0 +1,13 @@
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Dispositivos
+    </ion-list-header>
+
+    <div *ngFor="let ngFor_device of devices">
+      <ion-item (click)="select(ngFor_device)" [button]="true" class="ion-text-center">
+        <ion-label> {{ngFor_device.name}} </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

@@ -1,5 +1,7 @@
 {
   "name": "SliderINGIA",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

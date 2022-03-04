@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajustes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Vel Subida [mm/s]</ion-label>
+    <ion-input class="ion-text-right" inputmode="numeric" placeholder="Velocidad" [(ngModel)]="settings.vel_subida.val"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Vel Bajada [mm/s]</ion-label>
+    <ion-input class="ion-text-right" inputmode="numeric" placeholder="Velocidad" [(ngModel)]="settings.vel_bajada.val"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Aceleracion [mm2/s]</ion-label>
+    <ion-input class="ion-text-right" inputmode="numeric" placeholder="Aceleracion" [(ngModel)]="settings.acel.val"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Vel Home [mm/s]</ion-label>
+    <ion-input class="ion-text-right" inputmode="numeric" placeholder="Velocidad" [(ngModel)]="settings.vel_home.val"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Offset [mm]</ion-label>
+    <ion-input class="ion-text-right" inputmode="numeric" placeholder="Offset" [(ngModel)]="settings.offset.val"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Rel Numerador [pul/mm]</ion-label>
+    <ion-input class="ion-text-right" inputmode="numeric" placeholder="Relacion" [(ngModel)]="settings.rel_num.val"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Rel Denominador [pul/mm]</ion-label>
+    <ion-input class="ion-text-right" inputmode="numeric" placeholder="Relacion" [(ngModel)]="settings.rel_den.val"></ion-input>
+  </ion-item>
+</ion-content>

@@ -1,20 +1,92 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="{{buttons.connect.color}}" strong="true" expand="block" (click)="connectClicked()">
+          {{buttons.connect.text}}
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button disabled="{{but_disabled}}" color="warning" expand="block" strong="true" (click)="settingsClicked()">
+          Ajustes
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-right">
+                <ion-button disabled="{{but_disabled}}" color="{{buttons.jog_up.color}}" (touchend)="commandStop()" (touchstart)="commandJog(1)">
+                  ▲
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-right">
+                <ion-button disabled="{{but_disabled}}" color="{{buttons.jog_down.color}}" (touchend)="commandStop()" (touchstart)="commandJog(-1)">
+                  ▼
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <ion-list-header>Vel JOG [mm/s]</ion-list-header>
+          <ion-item>
+            <ion-input inputmode="numeric" placeholder="Velocidad" [(ngModel)]="vel_jog"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-right">
+          <ion-button disabled="{{but_disabled}}" color="{{buttons.mover.color}}" (click)="moverClicked()">
+            {{buttons.mover.text}}
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-input inputmode="numeric" placeholder="Destino [mm]" [(ngModel)]="motor_target"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="auto">
+        <div class="ion-text-right">
+          <ion-button disabled="{{but_disabled}}" color="{{buttons.home.color}}" (click)="homeClicked()">
+            HOME
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Pos Actual [mm]</ion-label>
+          <ion-input disabled="true" [(ngModel)]="motor_pos"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button disabled="{{buttons.stop.disabled}}" color="warning" expand="block" strong="true" (click)="commandStop()">
+    Parar
+  </ion-button>
+
 </ion-content>

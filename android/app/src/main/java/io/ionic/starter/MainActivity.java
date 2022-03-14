@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.ingia.proyectos.slideringia;
 
 import com.getcapacitor.BridgeActivity;
 
